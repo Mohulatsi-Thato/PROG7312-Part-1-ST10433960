@@ -148,4 +148,9 @@ var tree = new DeploymentNode
 };
 var result = DeploymentValidator.Validate(tree);
 Console.WriteLine($"Deployment valid: {result.IsValid}");
+// Health score / streak engagement engine
+var health = new SensorHealth("ESP32-014");
+health.RecordReading(withinExpectedRange: true, DateTimeOffset.UtcNow);
+Console.WriteLine($"Score={health.Score}, State={health.State}");
+```
 
