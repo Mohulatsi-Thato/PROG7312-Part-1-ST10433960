@@ -79,3 +79,6 @@ comments as a simplification versus a real persistence layer.
      `/api/simulation/seed/{mac}` to push 10,000 readings through the real
      ingestion path in one shot - watch the Activity Log for the elapsed
      milliseconds it took, and the health card update almost instantly.
+The health cards on the right poll `GET /api/telemetry/{mac}/health` every 3
+seconds and re-render the `RadialGaugeControl` (a hand-drawn WPF arc, not a
+`ProgressBar`) plus the streak text and colour state live.
