@@ -66,3 +66,16 @@ comments as a simplification versus a real persistence layer.
 **SmartX.Client requires Windows** (WPF only runs on Windows, even with
 `dotnet run` from the CLI). If you're on Windows with the .NET 10 SDK and the
 ".NET desktop development" workload installed in Visual Studio:
+1. Start the API first: `cd SmartX.Api && dotnet run` (leave it running).
+2. Run the client: `cd SmartX.Client && dotnet run`, or press F5 on
+   `SmartX.Client` in Visual Studio (set it as the startup project).
+3. On the landing menu, click the **Sensor Data Ingestion and Telemetry**
+   tile (the other two are intentionally disabled/greyed out per the brief).
+4. Register a sensor, then use the buttons under "Act on Sensor":
+   - **Attach Config File / Photo / Log...** opens a native `OpenFileDialog`
+     and uploads the chosen file via the API's multipart endpoint.
+   - **Send One Live Reading** posts a single randomised moisture reading.
+   - **Stress-Test: Seed 10,000 Readings** calls
+     `/api/simulation/seed/{mac}` to push 10,000 readings through the real
+     ingestion path in one shot - watch the Activity Log for the elapsed
+     milliseconds it took, and the health card update almost instantly.
