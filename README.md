@@ -34,3 +34,8 @@ dotnet sln add SmartX.Client/SmartX.Client.csproj
 cd SmartX.Api
 dotnet run
 ```
+It starts on **http://localhost:5080** (fixed in `Properties/launchSettings.json`
+so the WPF client, added in the next step, can point at a known address).
+Open `SmartX.Api.http` in Visual Studio, VS Code (REST Client extension), or
+Rider and click "Send Request" above each block to try every endpoint,
+including the `/api/simulation/seed/{mac}?count=10000` stress test.
