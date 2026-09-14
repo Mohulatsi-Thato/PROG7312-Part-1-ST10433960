@@ -42,3 +42,6 @@ including the `/api/simulation/seed/{mac}?count=10000` stress test.
 To test the multipart file-upload endpoint (not expressible cleanly in a
 `.http` file) from a terminal instead:
 
+```bash
+curl -F "file=@./some-config.json" http://localhost:5080/api/sensors/24:6F:28:AE:11:9C/attachments
+```
