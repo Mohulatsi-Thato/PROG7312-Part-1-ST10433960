@@ -61,3 +61,8 @@ curl -F "file=@./some-config.json" http://localhost:5080/api/sensors/24:6F:28:AE
 services registered in `Program.cs` - both are in-memory singletons, which is
 appropriate for a simulated gateway assignment but is clearly marked in code
 comments as a simplification versus a real persistence layer.
+## Running the full stack (SmartX.Client)
+
+**SmartX.Client requires Windows** (WPF only runs on Windows, even with
+`dotnet run` from the CLI). If you're on Windows with the .NET 10 SDK and the
+".NET desktop development" workload installed in Visual Studio:
