@@ -111,6 +111,13 @@ Drop this into a scratch `Program.cs` in a console project referencing
 using SmartX.Core.Telemetry;
 using SmartX.Core.Devices;
 using SmartX.Core.Diagnostics;
+// Operator overloading
+var meter1 = new PowerReading("M1", 820, DateTimeOffset.UtcNow);
+var meter2 = new PowerReading("M2", 640, DateTimeOffset.UtcNow);
+var meter3 = meter1 + meter2;
+Console.WriteLine($"Aggregate load: {meter3}");
+Console.WriteLine($"M1 draws more than M2? {meter1 > meter2}");
+
 using SmartX.Core.Simulation;
 // Generics + no-boxing packets
 var moisture = MockTelemetryGenerator.GenerateMoistureReadings("ESP32-014", 20, DateTimeOffset.UtcNow).ToList();
