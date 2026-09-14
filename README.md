@@ -82,3 +82,12 @@ comments as a simplification versus a real persistence layer.
 The health cards on the right poll `GET /api/telemetry/{mac}/health` every 3
 seconds and re-render the `RadialGaugeControl` (a hand-drawn WPF arc, not a
 `ProgressBar`) plus the streak text and colour state live.
+## Requirement → file map (SmartX.Client)
+
+| Brief requirement | File |
+|---|---|
+| Startup landing page / 3 pillars, 2 disabled | `MainWindow.xaml` |
+| Sensor registration form | `Views/IngestionWindow.xaml` (+ `.cs`) |
+| File attach via `OpenFileDialog` | `Views/IngestionWindow.xaml.cs` (`AttachFileButton_Click`) |
+| Dynamic engagement feature, not a progress bar | `Controls/RadialGaugeControl.xaml(.cs)` |
+| Talks to the API layer to push/retrieve data | `Services/ApiClient.cs` |
