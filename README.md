@@ -57,3 +57,7 @@ curl -F "file=@./some-config.json" http://localhost:5080/api/sensors/24:6F:28:AE
 | Operator overloading in action (`PowerReading` `+`) | `GET /api/power/aggregate` |
 | Seed heavy mock data to prove structures scale | `POST /api/simulation/seed/{mac}?count=10000` |
 | Recursion in action (nested deployment validation) | `POST /api/deployment/validate` |
+`SensorRegistry` and `TelemetryStore` (in `Storage/`) are the only two
+services registered in `Program.cs` - both are in-memory singletons, which is
+appropriate for a simulated gateway assignment but is clearly marked in code
+comments as a simplification versus a real persistence layer.
