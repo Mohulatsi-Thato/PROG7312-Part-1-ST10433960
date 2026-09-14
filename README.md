@@ -122,3 +122,7 @@ using SmartX.Core.Simulation;
 // Generics + no-boxing packets
 var moisture = MockTelemetryGenerator.GenerateMoistureReadings("ESP32-014", 20, DateTimeOffset.UtcNow).ToList();
 Console.WriteLine(moisture.First());
+// Jagged array batching -> List<T>, then stats
+var buffer = MockTelemetryGenerator.SeedBatchBuffer(10_000);
+var (mean, stdDev) = buffer.ComputeStatistics();
+Console.WriteLine($"Seeded {buffer.Count} readings. Mean={mean:F2}, StdDev={stdDev:F2}");
