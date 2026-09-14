@@ -102,3 +102,13 @@ seconds and re-render the `RadialGaugeControl` (a hand-drawn WPF arc, not a
 | Sensor registration record | `Devices/SensorDevice.cs` |
 | Dynamic engagement feature engine (Health Score + Streak) | `Diagnostics/SensorHealth.cs` |
 | Mock data seeding for load-testing the structures above | `Simulation/MockTelemetryGenerator.cs` |
+## Try it (once you have the .NET 10 SDK)
+
+Drop this into a scratch `Program.cs` in a console project referencing
+`SmartX.Core` to sanity-check the pieces interactively:
+
+```csharp
+using SmartX.Core.Telemetry;
+using SmartX.Core.Devices;
+using SmartX.Core.Diagnostics;
+using SmartX.Core.Simulation;
