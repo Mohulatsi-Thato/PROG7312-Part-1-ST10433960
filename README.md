@@ -15,7 +15,7 @@ SmartX.Api/        <- ASP.NET Core Minimal API: ingestion, sensor
                      registration, file upload, simulation seeding
 SmartX.Client/     <- WPF dashboard (THIS STEP): landing menu, sensor
                      registration + file attach, live health cards
-Opening the solution
+## Opening the solution
 
 If `SmartX.sln` doesn't load cleanly in your Visual Studio version, regenerate
 it in one minute instead of debugging the file by hand:
@@ -26,3 +26,11 @@ dotnet new sln -n SmartX --force
 dotnet sln add SmartX.Core/SmartX.Core.csproj
 dotnet sln add SmartX.Api/SmartX.Api.csproj
 dotnet sln add SmartX.Client/SmartX.Client.csproj
+```
+
+## Running the API
+
+```bash
+cd SmartX.Api
+dotnet run
+```
