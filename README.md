@@ -1,4 +1,4 @@
-Please remove any em dashes: <<<<<<< HEAD 1
+<<<<<<< HEAD 1
 # Smart-X — Task 1 (Sensor Data Ingestion and Telemetry)
 
 > Built for .NET 10. This sandbox does not have the .NET SDK installed, so these
