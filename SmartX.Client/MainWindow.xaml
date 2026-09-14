@@ -1,0 +1,64 @@
+<Window x:Class="SmartX.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Smart-X Gateway" Height="600" Width="960"
+        WindowStartupLocation="CenterScreen" Background="#0F172A">
+    <Grid Margin="48">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Smart-X" FontSize="44" FontWeight="Bold" Foreground="White"/>
+        <TextBlock Grid.Row="1" Text="Hybrid IoT Ecosystem Gateway - choose an architectural pillar"
+                   FontSize="15" Foreground="#94A3B8" Margin="0,4,0,32"/>
+
+        <UniformGrid Grid.Row="2" Columns="3" Rows="1">
+
+            <Border Margin="10" Background="#1E293B" CornerRadius="14" Cursor="Hand"
+                    BorderThickness="2" BorderBrush="#2563EB" MouseLeftButtonUp="OnIngestionTileClick">
+                <StackPanel Margin="20" VerticalAlignment="Center">
+                    <TextBlock Text="Sensor Data Ingestion" FontSize="18" FontWeight="Bold" Foreground="White"
+                               TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBlock Text="and Telemetry" FontSize="18" FontWeight="Bold" Foreground="White"
+                               TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBlock Text="Part 1" FontSize="11" Foreground="#94A3B8" HorizontalAlignment="Center"/>
+                    <Border Background="#22C55E" Opacity="0.18" CornerRadius="6" Padding="8,4" Margin="0,14,0,0">
+                        <TextBlock Text="AVAILABLE" FontSize="11" FontWeight="Bold" Foreground="#22C55E"
+                                   HorizontalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <Border Margin="10" Background="#1E293B" CornerRadius="14" Opacity="0.5" IsHitTestVisible="False">
+                <StackPanel Margin="20" VerticalAlignment="Center">
+                    <TextBlock Text="Real-Time Command Stream" FontSize="18" FontWeight="Bold" Foreground="White"
+                               TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBlock Text="and History" FontSize="18" FontWeight="Bold" Foreground="White"
+                               TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBlock Text="Part 2" FontSize="11" Foreground="#94A3B8" HorizontalAlignment="Center"/>
+                    <Border Background="#64748B" Opacity="0.25" CornerRadius="6" Padding="8,4" Margin="0,14,0,0">
+                        <TextBlock Text="DISABLED" FontSize="11" FontWeight="Bold" Foreground="#CBD5E1"
+                                   HorizontalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+            <Border Margin="10" Background="#1E293B" CornerRadius="14" Opacity="0.5" IsHitTestVisible="False">
+                <StackPanel Margin="20" VerticalAlignment="Center">
+                    <TextBlock Text="Network Topology" FontSize="18" FontWeight="Bold" Foreground="White"
+                               TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBlock Text="and Mesh Routing" FontSize="18" FontWeight="Bold" Foreground="White"
+                               TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBlock Text="Task 3" FontSize="11" Foreground="#94A3B8" HorizontalAlignment="Center"/>
+                    <Border Background="#64748B" Opacity="0.25" CornerRadius="6" Padding="8,4" Margin="0,14,0,0">
+                        <TextBlock Text="DISABLED" FontSize="11" FontWeight="Bold" Foreground="#CBD5E1"
+                                   HorizontalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+
+        </UniformGrid>
+    </Grid>
+</Window>

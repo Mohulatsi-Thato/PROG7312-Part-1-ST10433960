@@ -1,0 +1,13 @@
+## .NET build output
+bin/
+obj/
+*.user
+
+## Visual Studio
+.vs/
+
+## Rider
+.idea/
+
+## Uploaded attachments saved by SmartX.Api at runtime
+SmartX.Api/uploads/

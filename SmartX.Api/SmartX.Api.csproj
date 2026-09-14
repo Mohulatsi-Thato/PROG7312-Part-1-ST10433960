@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SmartX.Api</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <UserSecretsId>smartx-api-secrets</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartX.Core\SmartX.Core.csproj" />
+  </ItemGroup>
+
+</Project>

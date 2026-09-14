@@ -1,0 +1,74 @@
+@host = http://localhost:5080
+
+### Gateway status
+GET {{host}}/
+
+### Register a sensor
+POST {{host}}/api/sensors
+Content-Type: application/json
+
+{
+  "macAddress": "24:6F:28:AE:11:9C",
+  "location": "Sub-Zone B / Zone 1 / Facility A",
+  "category": "Environmental"
+}
+
+### List all sensors
+GET {{host}}/api/sensors
+
+### Ingest one moisture reading (float, no boxing)
+POST {{host}}/api/telemetry/24:6F:28:AE:11:9C/moisture
+Content-Type: application/json
+
+{
+  "value": 42.5
+}
+
+### Ingest one power reading (double)
+POST {{host}}/api/telemetry/24:6F:28:AE:11:9C/power
+Content-Type: application/json
+
+{
+  "watts": 812.4
+}
+
+### Ingest one switch trigger (bool)
+POST {{host}}/api/telemetry/24:6F:28:AE:11:9C/switch
+Content-Type: application/json
+
+{
+  "state": true
+}
+
+### Check the live Health Score + Streak card
+GET {{host}}/api/telemetry/24:6F:28:AE:11:9C/health
+
+### Rolling stats from the jagged-array batch buffer
+GET {{host}}/api/telemetry/24:6F:28:AE:11:9C/stats
+
+### Facility-wide aggregate load (PowerReading + operator)
+GET {{host}}/api/power/aggregate
+
+### Stress-test: seed 10,000 mock readings through the real ingestion path
+POST {{host}}/api/simulation/seed/24:6F:28:AE:11:9C?count=10000
+
+### Recursive deployment-tree validation (nested Sub-Zone -> Zone -> Facility)
+POST {{host}}/api/deployment/validate
+Content-Type: application/json
+
+{
+  "name": "Facility A",
+  "children": [
+    {
+      "name": "Zone 1",
+      "children": [
+        {
+          "name": "Sub-Zone B",
+          "sensors": [
+            { "macAddress": "24:6F:28:AE:11:9C", "location": "Sub-Zone B", "category": "Environmental" }
+          ]
+        }
+      ]
+    }
+  ]
+}
