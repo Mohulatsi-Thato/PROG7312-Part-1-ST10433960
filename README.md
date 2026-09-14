@@ -126,3 +126,26 @@ Console.WriteLine(moisture.First());
 var buffer = MockTelemetryGenerator.SeedBatchBuffer(10_000);
 var (mean, stdDev) = buffer.ComputeStatistics();
 Console.WriteLine($"Seeded {buffer.Count} readings. Mean={mean:F2}, StdDev={stdDev:F2}");
+// Recursive deployment validation
+var tree = new DeploymentNode
+{
+    Name = "Facility A",
+    Children =
+    {
+        new DeploymentNode
+        {
+            Name = "Zone 1",
+            Children =
+            {
+                new DeploymentNode
+                {
+                    Name = "Sub-Zone B",
+                    Sensors = { new SensorDevice { MacAddress = "24:6F:28:AE:11:9C", Category = SensorCategory.Environmental } }
+                }
+            }
+        }
+    }
+};
+var result = DeploymentValidator.Validate(tree);
+Console.WriteLine($"Deployment valid: {result.IsValid}");
+
