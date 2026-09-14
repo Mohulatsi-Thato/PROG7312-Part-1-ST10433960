@@ -91,3 +91,14 @@ seconds and re-render the `RadialGaugeControl` (a hand-drawn WPF arc, not a
 | File attach via `OpenFileDialog` | `Views/IngestionWindow.xaml.cs` (`AttachFileButton_Click`) |
 | Dynamic engagement feature, not a progress bar | `Controls/RadialGaugeControl.xaml(.cs)` |
 | Talks to the API layer to push/retrieve data | `Services/ApiClient.cs` |
+## Requirement → file map (SmartX.Core)
+
+| Technical requirement | File |
+|---|---|
+| **Generics** — `TelemetryPacket<T>` uniform wrapper, no boxing | `Telemetry/TelemetryPacket.cs` |
+| **Operator overloading** — `+`, `-`, `>`, `<`, `==` on sensor data | `Telemetry/PowerReading.cs` |
+| **Advanced arrays & lists** — jagged array batches → `List<T>` | `Telemetry/TelemetryBatchBuffer.cs` |
+| **Recursion** — nested deployment-tree validation | `Devices/DeploymentValidator.cs` |
+| Sensor registration record | `Devices/SensorDevice.cs` |
+| Dynamic engagement feature engine (Health Score + Streak) | `Diagnostics/SensorHealth.cs` |
+| Mock data seeding for load-testing the structures above | `Simulation/MockTelemetryGenerator.cs` |
