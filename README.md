@@ -45,3 +45,15 @@ To test the multipart file-upload endpoint (not expressible cleanly in a
 ```bash
 curl -F "file=@./some-config.json" http://localhost:5080/api/sensors/24:6F:28:AE:11:9C/attachments
 ```
+## Requirement → endpoint map (SmartX.Api)
+
+| Brief requirement | Endpoint(s) |
+|---|---|
+| API Integration Layer (primary telemetry receiver) | `POST /api/telemetry/{mac}/moisture` \| `/power` \| `/switch` |
+| Sensor Payload Management (MAC, location, category) | `POST` / `GET /api/sensors` |
+| Media/Log Attachment (multipart upload) | `POST /api/sensors/{mac}/attachments` |
+| Dynamic engagement feature (Health Score + Streak) | `GET /api/telemetry/{mac}/health` |
+| Jagged-array batch stats (feeds anomaly detection) | `GET /api/telemetry/{mac}/stats` |
+| Operator overloading in action (`PowerReading` `+`) | `GET /api/power/aggregate` |
+| Seed heavy mock data to prove structures scale | `POST /api/simulation/seed/{mac}?count=10000` |
+| Recursion in action (nested deployment validation) | `POST /api/deployment/validate` |
