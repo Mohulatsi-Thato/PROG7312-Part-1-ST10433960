@@ -39,3 +39,6 @@ so the WPF client, added in the next step, can point at a known address).
 Open `SmartX.Api.http` in Visual Studio, VS Code (REST Client extension), or
 Rider and click "Send Request" above each block to try every endpoint,
 including the `/api/simulation/seed/{mac}?count=10000` stress test.
+To test the multipart file-upload endpoint (not expressible cleanly in a
+`.http` file) from a terminal instead:
+
