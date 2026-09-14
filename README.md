@@ -112,3 +112,6 @@ using SmartX.Core.Telemetry;
 using SmartX.Core.Devices;
 using SmartX.Core.Diagnostics;
 using SmartX.Core.Simulation;
+// Generics + no-boxing packets
+var moisture = MockTelemetryGenerator.GenerateMoistureReadings("ESP32-014", 20, DateTimeOffset.UtcNow).ToList();
+Console.WriteLine(moisture.First());
